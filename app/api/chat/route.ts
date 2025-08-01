@@ -105,7 +105,7 @@ export async function POST(request: Request) {
             model: "gpt-4o-mini",
             messages: chatPayload,
             temperature: 0.7,
-            max_tokens: 4000,
+            max_tokens: 5000,
         });
         
         console.log("OpenAI response:", completion);
