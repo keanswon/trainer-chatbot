@@ -3,6 +3,7 @@ import React from 'react';
 interface TextBoxProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
   rows?: number;
   disabled?: boolean;
@@ -12,6 +13,7 @@ interface TextBoxProps {
 const TextBox: React.FC<TextBoxProps> = ({
   value,
   onChange,
+  onKeyDown,
   placeholder = "Type a message…",
   rows = 3,
   disabled = false,
@@ -21,6 +23,7 @@ const TextBox: React.FC<TextBoxProps> = ({
     <textarea
       value={value}
       onChange={onChange}
+      onKeyDown={ onKeyDown }
       placeholder={placeholder}
       rows={rows}
       disabled={disabled}
